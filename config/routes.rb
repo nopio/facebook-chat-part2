@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :conversations, only: [:create]
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+  end
 end
